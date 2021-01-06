@@ -9,8 +9,11 @@ public class MakeStars{
       String[] line = lines.get(i);
       for (int j = 0; j < line.length; j ++ )
       {
-        System.out.print(line[j]);
-        System.out.print(" ");
+        for (int k = 0; k < line[j].length(); k ++)
+        {
+          System.out.print("*");
+        }
+        if (j != line.length - 1) {System.out.print(" ");}
       }
       System.out.println();
     }
@@ -19,6 +22,7 @@ public class MakeStars{
 
 
 /*
+cat book.txt | java PigLatin
 
 Syntax to run this program should be:
 java MakeStars < book.txt
