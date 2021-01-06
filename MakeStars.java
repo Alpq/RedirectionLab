@@ -1,19 +1,18 @@
-import java.util.ArrayList
+import java.util.*;
+import java.io.*;
 public class MakeStars{
   public static void main(String[] args) {
-    String f = args[0];
-    File f = new File(f);//can combine
-    Scanner s = new Scanner(f);
+    Scanner s = new Scanner(System.in);
     ArrayList<String[]> lines = new ArrayList<String[]>(0);
-    while(in.hasNext()){ lines.add(in.nextLine().split(" ")); }
+    while(s.hasNext()){ lines.add(s.nextLine().split(" ")); }
     for (int i = 0;i < lines.size(); i ++) {
       String[] line = lines.get(i);
-      for (int j = 0; line.length; j ++ )
+      for (int j = 0; j < line.length; j ++ )
       {
-        system.out.print(line[j]);
-        system.out.print(" ");
+        System.out.print(line[j]);
+        System.out.print(" ");
       }
-      system.out.println();
+      System.out.println();
     }
   }
 }
