@@ -3,12 +3,16 @@ import java.io.*;
 public class PigLatin{
   public static String pigLatinSimple(String s)
   {
+    s = s.toLowerCase();
     ArrayList<String> vowels = new ArrayList<String>(Arrays.asList("a","e","i","o","u"));
     return vowels.contains(s.substring(0, 1)) ? s + "hay" : s.substring(1) + s.substring(0, 1) + "ay";
   }
   public static String pigLatin(String s)
   {
-    return s;
+    s = s.toLowerCase();
+    ArrayList<String> vowels = new ArrayList<String>(Arrays.asList("a","e","i","o","u"));
+    ArrayList<String> diagraphs = new ArrayList<String>(Arrays.asList("bl", "br", "ch", "ck", "cl", "cr", "dr", "fl", "fr", "gh", "gl", "gr", "ng", "ph", "pl", "pr", "qu", "sc", "sh", "sk", "sl", "sm", "sn", "sp", "st", "sw", "th", "tr", "tw", "wh", "wr"));
+    return vowels.contains(s.substring(0, 1)) ? s + "hay" : diagraphs.contains(s.substring(0, 2)) ? s.substring(2) + s.substring(0, 2) + "ay" : s.substring(1) + s.substring(0, 1) + "ay";
   }
   public static String pigLatinBest(String s)
   {
@@ -23,7 +27,7 @@ public class PigLatin{
       String[] line = lines.get(i);
       for (int j = 0; j < line.length; j ++ )
       {
-        System.out.println(pigLatinSimple(line[j]));
+        System.out.print(pigLatin(line[j]));
         if (j != line.length - 1) {System.out.print(" ");}
       }
       System.out.println();
